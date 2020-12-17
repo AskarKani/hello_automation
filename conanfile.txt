@@ -1,0 +1,5 @@
+[requires]
+askar/0.1@askar/buildgcc
+
+[generators]
+cmake

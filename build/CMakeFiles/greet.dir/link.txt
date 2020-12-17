@@ -1,0 +1,1 @@
+/usr/bin/c++.exe   -Wl,--enable-auto-import CMakeFiles/greet.dir/main.cpp.o  -o bin/greet.exe -Wl,--out-implib,lib/libgreet.dll.a -Wl,--major-image-version,0,--minor-image-version,0  lib/libhello.a 
