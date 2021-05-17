@@ -1,4 +1,0 @@
-/cygdrive/a/my_projects/conan/hello_program/build/CMakeFiles/rebuild_cache.dir
-/cygdrive/a/my_projects/conan/hello_program/build/CMakeFiles/edit_cache.dir
-/cygdrive/a/my_projects/conan/hello_program/build/CMakeFiles/greet.dir
-/cygdrive/a/my_projects/conan/hello_program/build/CMakeFiles/hello.dir

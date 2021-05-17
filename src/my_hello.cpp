@@ -1,9 +1,8 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
 
-void print(string message)
+void print(std::string message)
 {
-    cout << "hello hi from " << message << endl;
+    std::cout << "hello hi from " << message << std::endl;
 }
