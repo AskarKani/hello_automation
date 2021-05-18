@@ -1,10 +1,11 @@
 #include <iostream>
 #include "my_hello.h"
-#include <my_hello_shared.h>
-
+#if 0
+ #include <my_hello_shared.h>
+#endif
 int main()
 {
     print("conan");
-    print_new("rpi");
+    print("rpi");
     return 0;
 }
