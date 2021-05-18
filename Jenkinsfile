@@ -19,7 +19,7 @@ node {
         //dir ('build') {
           //def b = client.run(command: "install ..")
           //server.publishBuildInfo b
-        }
+        //}
     }
 
     stage("Build / Test recipe"){
