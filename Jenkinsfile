@@ -5,7 +5,7 @@ def repo_branch = "master"
 
 
 node {
-    def server = Artifactory.server "my_artifactory"
+    def server = Artifactory.server "artifactory"
     def client = Artifactory.newConanClient()
     def serverName = client.remote.add server: server, repo: artifactory_repo
     stage("Get recipe"){
@@ -31,7 +31,7 @@ node {
     stage("Upload packages"){
          //String command= sh "upload \"*\" --all -r ${serverName} --confirm"
         //def b = client.run(command: command)
-        sh " printf 'yes\nyes\nadmin\npassword' | conan upload hello* -r artifactory --all"
+        sh " printf 'yes\nyes\nadmin\nAskar@123' | conan upload hello* -r artifactory --all"
     }
     
     stage("Connecting to Test Environment"){
