@@ -21,11 +21,11 @@ node {
     }
 
     stage("Build / Test recipe"){
-          sh "conan create . vw/testing"
-          sh "conan build . -if=build -bf=build"
-          sh "ls build"
-          sh "conan remote list"
-          sh "conan search"
+          sh "conan create . vw/testing -pr=rpi_3bplus"
+          //sh "conan build . -if=build -bf=build"
+          //sh "ls build"
+          //sh "conan remote list"
+          //sh "conan search"
     }
 
     stage("Upload packages"){
@@ -50,8 +50,8 @@ node {
     stage("Download Artifacts from Artifactory"){
        //sh "curl -sSf -u 'admin:password' -O 'http://localhost:8082/ui/repos/tree/General/repofromjenkins1/hello.zip'"
        sh "pwd"
-       sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.1.100 ./mytrigger.sh"  // trigger the script from virtual m/c. change the ip from script also
-        
+       //sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.1.100 ./mytrigger.sh"  // trigger the script from virtual m/c. change the ip from script also
+       sh "sshpass -p 'raspberry' ssh -tt -o StrictHostKeyChecking=no pi@192.168.0.180 /home/pi/deploy/"
     }
 }
 
