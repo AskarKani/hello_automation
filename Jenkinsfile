@@ -13,6 +13,8 @@ node {
     }
     
     stage("Get dependencies and publish build info"){
+        sh "pip3 install conan"
+        sh "conan -v"
         sh "mkdir -p build"
         dir ('build') {
           def b = client.run(command: "install ..")
