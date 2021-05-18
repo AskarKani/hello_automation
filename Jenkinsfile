@@ -15,9 +15,9 @@ node {
     stage("Get dependencies and publish build info"){
         //sh "pip3 install conan"
         sh "conan -v"
-        sh "mkdir -p build"
-        dir ('build') {
-          def b = client.run(command: "install ..")
+        //sh "mkdir -p build"
+        //dir ('build') {
+          //def b = client.run(command: "install ..")
           //server.publishBuildInfo b
         }
     }
@@ -27,19 +27,20 @@ node {
           //sh "conan build . -if=build -bf=build"
           //sh "ls build"
           //sh "conan remote list"
-          //sh "conan search"
+          sh "conan search"
     }
 
     stage("Upload packages"){
          //String command= sh "upload \"*\" --all -r ${serverName} --confirm"
         //def b = client.run(command: command)
-        sh " printf 'admin\nAskar@123' | conan upload hello* -r artifactory --all --confirm"
+        //sh " printf 'admin\nAskar@123' | conan upload hello/1.0.0@vw/testing -r artifactory --all --confirm"
+        sh "conan upload hello/1.0.0@vw/testing -r artifactory --all --confirm"
     }
     
-    stage("Connecting to Test Environment"){
+    //stage("Connecting to Test Environment"){
        //sh "hostname -I"
        //sh "#!/bin/bash"
-       sh "pwd"
+       //sh "pwd"
         // create the abc.zip file.
        //sh "wget -O abc.zip --auth-no-challenge --user=admin --password=admin http://localhost:8080/job/artifact%20generator/lastSuccessfulBuild/artifact/*"
        
@@ -47,9 +48,9 @@ node {
         //sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.1.100 ls jenkins"
         //sh "sshpass -p 'e3-sdk' scp abc.zip developer@192.168.1.100:jenkins"    // ship abc.zip from localhost to vmware.
         //sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.1.100 ls jenkins" 
-    }
+    //}
     
-    stage("Download Artifacts from Artifactory"){
+    stage("Deploy to rpi 3"){
        //sh "curl -sSf -u 'admin:password' -O 'http://localhost:8082/ui/repos/tree/General/repofromjenkins1/hello.zip'"
        sh "pwd"
        //sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.1.100 ./mytrigger.sh"  // trigger the script from virtual m/c. change the ip from script also
