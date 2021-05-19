@@ -12,7 +12,7 @@ node {
         git branch: repo_branch, url: repo_url
     }
     
-    stage("Creating "){
+    stage("Creating conan package"){
           sh "conan create . vw/testing -pr=rpi_3bplus"
     }
 
